@@ -1,22 +1,17 @@
 package com.calculator.calculator.service;
 
-import org.springframework.stereotype.Service;
+import com.calculator.calculator.exceptions.DivisionByZeroExceptions;
 
-@Service
-public class CalculatorService {
-    public int plus(int a, int b) {
-        return a + b;
-    }
+public interface CalculatorService {
+    int plus(int a, int b);
 
-    public int minus(int a, int b) {
-        return a - b;
-    }
+    int minus(int a, int b);
 
-    public int multiply(int a, int b) {
-        return a * b;
-    }
 
-    public int divide(int a, int b) {
-        return a / b;
-    }
+    int multiply(int a, int b);
+
+
+    int divide(int a, int b) throws Exception, DivisionByZeroExceptions;
 }
+
+

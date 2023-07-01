@@ -1,5 +1,6 @@
 package com.calculator.calculator.controller;
 
+import com.calculator.calculator.exceptions.DivisionByZeroExceptions;
 import com.calculator.calculator.service.CalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +40,7 @@ public class CalculatorController {
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam("num1") int a, @RequestParam("num2") int b) {
+    public String divide(@RequestParam("num1") int a, @RequestParam("num2") int b) throws Exception, DivisionByZeroExceptions {
         if (b == 0) {
             return "На ноль делить нельзя";
         }
